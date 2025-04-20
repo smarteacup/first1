@@ -4,7 +4,159 @@ page {
   display: flex;
   flex-direction: column;
 }
-.scrollarea {
+
+.container {
+  padding-top: 20rpx;
+}
+
+.safe-area-padding {
+  height: 30rpx;
+  width: 100%;
+}
+
+.app-title-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.tagline {
+  font-size: 32rpx;
+  color: #7f8c8d;
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+
+.category-card {
+  width: 85%;
+  padding: 30rpx;
+  margin: 30rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.picker-view {
+  background-color: #3498db;
+  color: white;
+  padding: 24rpx 40rpx;
+  border-radius: 16rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  width: 450rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4rpx 8rpx rgba(52, 152, 219, 0.3);
+}
+
+.picker-text {
+  font-size: 34rpx;
+  font-weight: 500;
+}
+
+.arrow {
+  font-size: 24rpx;
+  margin-left: 10rpx;
+}
+
+.button-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60rpx;
+}
+
+/* Override default button styles */
+button.primary-btn,
+button.secondary-btn {
+  border: none;
+  line-height: normal;
+  padding: 26rpx 0;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+
+.button-hover {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 24rpx;
+  padding: 0;
+  width: 85%;
+  max-width: 650rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: #3498db;
+  width: 100%;
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-header .subtitle {
+  color: white;
+  margin: 0;
+}
+
+.rules-text {
+  padding: 40rpx 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rule-item {
+  display: flex;
+  margin-bottom: 30rpx;
+  align-items: flex-start;
+}
+
+.rule-number {
+  background-color: #3498db;
+  color: white;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.rule-content {
+  font-size: 30rpx;
+  line-height: 1.5;
   flex: 1;
-  overflow-y: hidden;
+}
+
+.version-info {
+  position: absolute;
+  bottom: 30rpx;
+  font-size: 24rpx;
+  color: #95a5a6;
 }

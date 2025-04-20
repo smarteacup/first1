@@ -1,0 +1,32 @@
+<!--prepare.wxml-->
+<view class="container">
+  <!-- Decorative elements -->
+  <view class="decorative-dot dot-1"></view>
+  <view class="decorative-dot dot-3"></view>
+  
+  <view class="safe-area-padding"></view>
+  <view class="title">准备开始</view>
+  
+  <view class="round-info card">
+    <view class="subtitle">第 {{round}} 轮</view>
+  </view>
+  
+  <view class="countdown-container">
+    <view class="countdown {{countdown === 1 ? 'countdown-last' : ''}}">
+      <view class="timer">{{countdown}}</view>
+    </view>
+  </view>
+  
+  <view class="instructions card">
+    <view class="instruction-heading">游戏提示</view>
+    <view class="instruction-item">持设备者将看不到词语</view>
+    <view class="instruction-item">其他玩家描述词语</view>
+    <view class="instruction-item">猜对点击左侧，跳过点击右侧</view>
+  </view>
+  
+  <view class="prepare-animation">
+    <view class="animation-dot"></view>
+    <view class="animation-dot"></view>
+    <view class="animation-dot"></view>
+  </view>
+</view> 

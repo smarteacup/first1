@@ -1,0 +1,31 @@
+<!--game.wxml-->
+<view class="game-container">
+  <view class="safe-area-padding"></view>
+  <view class="game-header">
+    <view class="round-info">第 {{round}} 轮</view>
+    <view class="timer {{isUrgent ? 'timer-urgent' : ''}}">{{timeLeft}}</view>
+    <view class="score">得分: {{score}}</view>
+  </view>
+  
+  <view class="word-container">
+    <view class="current-word">{{currentWord}}</view>
+    <view class="word-divider"></view>
+  </view>
+  
+  <view class="game-actions">
+    <view class="action-area correct-area" bindtap="onCorrect" hover-class="correct-area-active" hover-stay-time="80">
+      <view class="action-text">正确</view>
+      <view class="hint-arrow">←</view>
+    </view>
+    <view class="action-area skip-area" bindtap="onSkip" hover-class="skip-area-active" hover-stay-time="80">
+      <view class="action-text">跳过</view>
+      <view class="hint-arrow">→</view>
+    </view>
+  </view>
+  
+  <view class="game-hint-text">持设备者看不到此屏幕，根据其他人的提示猜词</view>
+  
+  <!-- Visual feedback elements for taps -->
+  <view class="tap-feedback correct-feedback {{showCorrectFeedback ? 'show-feedback' : ''}}"></view>
+  <view class="tap-feedback skip-feedback {{showSkipFeedback ? 'show-feedback' : ''}}"></view>
+</view> 

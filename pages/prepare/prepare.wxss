@@ -1,0 +1,129 @@
+/**prepare.wxss**/
+
+.safe-area-padding {
+  height: 30rpx;
+  width: 100%;
+}
+
+.countdown-container {
+  margin: 60rpx 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 50%;
+  background-color: #3498db;
+  box-shadow: 0 8rpx 20rpx rgba(52, 152, 219, 0.4);
+  transition: all 0.3s ease;
+  animation: scaleCount 1s infinite alternate;
+}
+
+.countdown-last {
+  background-color: #e74c3c;
+  animation: pulseCount 0.7s infinite;
+}
+
+@keyframes scaleCount {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulseCount {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.round-info {
+  margin: 20rpx 0;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.round-info .subtitle {
+  margin: 10rpx 0;
+}
+
+.instructions {
+  margin-top: 40rpx;
+  width: 85%;
+  padding: 30rpx;
+}
+
+.instruction-heading {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #34495e;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.instruction-item {
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 2;
+  color: #7f8c8d;
+  border-bottom: 2rpx dashed rgba(189, 195, 199, 0.5);
+  padding-bottom: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.instruction-item:last-child {
+  border-bottom: none;
+}
+
+.prepare-animation {
+  display: flex;
+  justify-content: center;
+  margin-top: 60rpx;
+}
+
+.animation-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background-color: #3498db;
+  margin: 0 8rpx;
+}
+
+.animation-dot:nth-child(1) {
+  animation: jumpDot 1s infinite 0.1s;
+}
+
+.animation-dot:nth-child(2) {
+  animation: jumpDot 1s infinite 0.2s;
+}
+
+.animation-dot:nth-child(3) {
+  animation: jumpDot 1s infinite 0.3s;
+}
+
+@keyframes jumpDot {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15rpx);
+  }
+} 
