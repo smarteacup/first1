@@ -18,27 +18,35 @@
     </view>
   </view>
   
-  <view class="word-lists">
-    <view class="word-section">
-      <view class="section-header">
-        <view class="correct-dot"></view>
-        <view class="subtitle">猜对词语 ({{correctWords.length}})</view>
+  <scroll-view class="word-lists-scroll" scroll-y="true">
+    <view class="word-lists">
+      <view class="word-section">
+        <view class="section-header">
+          <view class="correct-dot"></view>
+          <view class="subtitle">猜对词语 ({{correctWords.length}})</view>
+        </view>
+        <view class="word-list correct-list">
+          <view class="word-item" wx:for="{{correctWords}}" wx:key="*this">{{item}}</view>
+          <view class="empty-message" wx:if="{{correctWords.length === 0}}">本轮没有猜对的词语</view>
+        </view>
       </view>
-      <view class="word-list correct-list">
-        <view class="word-item" wx:for="{{correctWords}}" wx:key="*this">{{item}}</view>
-        <view class="empty-message" wx:if="{{correctWords.length === 0}}">本轮没有猜对的词语</view>
+      
+      <view class="word-section" wx:if="{{skippedWords.length > 0}}">
+        <view class="section-header">
+          <view class="skip-dot"></view>
+          <view class="subtitle">跳过词语 ({{skippedWords.length}})</view>
+        </view>
+        <view class="word-list skipped-list">
+          <view class="word-item" wx:for="{{skippedWords}}" wx:key="*this">{{item}}</view>
+        </view>
       </view>
     </view>
-    
-    <view class="word-section" wx:if="{{skippedWords.length > 0}}">
-      <view class="section-header">
-        <view class="skip-dot"></view>
-        <view class="subtitle">跳过词语 ({{skippedWords.length}})</view>
-      </view>
-      <view class="word-list skipped-list">
-        <view class="word-item" wx:for="{{skippedWords}}" wx:key="*this">{{item}}</view>
-      </view>
-    </view>
+  </scroll-view>
+  
+  <view class="result-message">
+    <block wx:if="{{score >= 10}}">太厉害了！你是猜词天才！</block>
+    <block wx:elif="{{score >= 5}}">不错的成绩，继续加油！</block>
+    <block wx:else>再接再厉，下次更好！</block>
   </view>
   
   <view class="button-group">
@@ -51,11 +59,5 @@
     <button class="share-btn" open-type="share" hover-class="button-hover">
       分享成绩
     </button>
-  </view>
-  
-  <view class="result-message">
-    <block wx:if="{{score >= 10}}">太厉害了！你是猜词天才！</block>
-    <block wx:elif="{{score >= 5}}">不错的成绩，继续加油！</block>
-    <block wx:else>再接再厉，下次更好！</block>
   </view>
 </view> 
